@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Form, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { BackendErrorInterface } from 'src/app/shared/types/backendErrors.interface';
 import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
 import { AuthService } from '../../services/auth.service';
 import { registerAction } from '../../store/actions/register.action';
-import { isSubmittingSelector } from '../../store/selectors';
+import { isSubmittingSelector, validationErrorSelector } from '../../store/selectors';
 import { registerRequestInterface } from '../../types/registerRequest.interface';
 
 @Component({
@@ -15,7 +16,8 @@ import { registerRequestInterface } from '../../types/registerRequest.interface'
 })
 export class RegisterComponent implements OnInit {
   form!: UntypedFormGroup;
-  isSubmitting$: Observable<boolean> | undefined
+  isSubmitting$!: Observable<boolean>;
+  backendErrors$!: Observable<BackendErrorInterface | null>;
 
   constructor(private fb: UntypedFormBuilder,
               private store: Store,
@@ -29,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   initializeValues(): void {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
-    console.log(this.isSubmitting$, 'isSubmitting$')
+    this.backendErrors$ = this.store.pipe(select(validationErrorSelector));
   }
 
   initializeForm(): void {
@@ -38,7 +40,6 @@ export class RegisterComponent implements OnInit {
       email: '',
       password: ''
     })
-    // console.log(this.form.valid)
   }
 
   onSubmit() {
