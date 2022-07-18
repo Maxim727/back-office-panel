@@ -1,0 +1,18 @@
+<p>test-parent works!</p>
+<div class="col-md-6 offset-md-3 col-xs-12">
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='currentMsgToChild'>
+
+
+      <!-- <input type="text" class="form-control" [(ngModel)]='currentMsgToChild'>
+      Parent to Child binding -->
+    </div>
+  </form>
+</div>
+
+<app-test-child (callParent)="getMsgFromChild($event)"></app-test-child>
+
+
+<!-- <app-test-child [msgFromParent]='currentMsgToChild'></app-test-child>
+Parent to Child binding -->
