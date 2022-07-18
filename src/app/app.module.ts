@@ -13,6 +13,8 @@ import { TopBarModule } from './shared/topBar.module';
 import { TestParentComponent } from './test-parent/test-parent.component';
 import { TestChildComponent } from './test-parent/test-child/test-child.component';
 import { FormsModule } from '@angular/forms';
+import { PersistanceService } from './shared/services/persistance.service';
+import { AuthInterceptor } from './shared/services/authInterceptor.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import { FormsModule } from '@angular/forms';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     TopBarModule
   ],
-  providers: [],
+  providers: [
+    PersistanceService,
+    AuthInterceptor
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
