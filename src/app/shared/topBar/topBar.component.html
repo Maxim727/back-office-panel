@@ -6,9 +6,43 @@
     <ul class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
         <a style="color: green;" [routerLink]="['/']" class="nav-link">
-          Home
+          &nbsp;Home
         </a>
       </li>
+      <ng-container *ngIf="isLoggedIn$ | async">
+        <li class="nav-item">
+          <a style="color: green;" [routerLink]="['/articles/new']" class="nav-link">
+            <i class="ion-compose"></i>
+            &nbsp; New Post
+          </a>
+        </li>
+        <li class="nav-item">
+          <a style="color: green;" [routerLink]="['/settings']" class="nav-link">
+            <i class="ion-gear-a"></i>
+            &nbsp; Settings
+          </a>
+        </li>
+        <li class="nav-item">
+          <a style="color: green;" [routerLink]="['/profiles, (currentUser$ | async).username']" class="nav-link">
+           <img class="user-pic" [src]="(currentUser$ | async).image">
+            &nbsp; {{(currentUser$ | async).username}}
+          </a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="isAnonymous$ | async">
+        <li class="nav-item">
+          <a style="color: green;" [routerLink]="['/login']" class="nav-link">
+            <i class="ion-compose"></i>
+            &nbsp; Sign In
+          </a>
+        </li>
+        <li class="nav-item">
+          <a style="color: green;" [routerLink]="['/register']" class="nav-link">
+            <i class="ion-compose"></i>
+            &nbsp; Register
+          </a>
+        </li>
+      </ng-container>
     </ul>
   </div>
 </nav>

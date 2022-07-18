@@ -6,5 +6,6 @@ export interface AuthStateInterface {
   currentUser: CurrentUserInterface | null,
   isLoggedIn: boolean | null,
   // null - in case user has been logged in or not yet
-  validationErrors: BackendErrorInterface | null
+  validationErrors: BackendErrorInterface | null,
+  isLoading: boolean
 }
