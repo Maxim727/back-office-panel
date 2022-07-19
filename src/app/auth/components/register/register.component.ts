@@ -12,7 +12,7 @@ import { registerRequestInterface } from '../../types/registerRequest.interface'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['../backgroundAnim.scss']
 })
 export class RegisterComponent implements OnInit {
   form!: UntypedFormGroup;

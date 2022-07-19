@@ -12,7 +12,7 @@ import { loginRequestInterface } from '../../types/loginRequest.interface';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['../backgroundAnim.scss']
 })
 
 export class LoginComponent {
