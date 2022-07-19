@@ -6,7 +6,7 @@ export interface CurrentUserInterface {
   username: string,
   bio: string | null,
   image: string | null,
-  token: string
+  token: string,
 }
 
 // Angular suggests using like this
