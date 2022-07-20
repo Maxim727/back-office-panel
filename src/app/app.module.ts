@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './shared/services/authInterceptor.service';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -30,16 +31,20 @@ import { GlobalFeedModule } from './globalFeed/globalFeed.module';
     HttpClientModule,
     FormsModule,
 
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      router: routerReducer
+    }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
       autoPause: true,
     }),
+    StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     TopBarModule,
-    GlobalFeedModule
+    GlobalFeedModule,
+
   ],
   providers: [
     PersistanceService,
