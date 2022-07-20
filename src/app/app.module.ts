@@ -10,8 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { TopBarModule } from './shared/topBar.module';
-import { TestParentComponent } from './test-parent/test-parent.component';
-import { TestChildComponent } from './test-parent/test-child/test-child.component';
 import { FormsModule } from '@angular/forms';
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './shared/services/authInterceptor.service';
@@ -20,9 +18,7 @@ import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TestParentComponent,
-    TestChildComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
