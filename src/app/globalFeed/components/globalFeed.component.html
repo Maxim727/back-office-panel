@@ -1,3 +1,10 @@
+<div class="container page">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 col-xs-12"></div>
+    <button class="btn btn-lg btn-primary" [disabled]="disable" (click)="counter()">SUBMIT</button>
+  </div>
+</div>
+
 <div class="home-page">
   <mc-banner></mc-banner>
   <div class="container page">
@@ -6,9 +13,7 @@
         FEED TOGGLER
         <app-feed [apiUrl]="apiUrl"></app-feed>
       </div>
-      <div class="col-md-3">
-        POPULAR TAGS
-      </div>
+      <div class="col-md-3">POPULAR TAGS</div>
     </div>
   </div>
 </div>

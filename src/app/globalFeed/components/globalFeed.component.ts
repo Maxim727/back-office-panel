@@ -8,4 +8,9 @@ import { Component } from "@angular/core";
 
 export class GlobalFeedComponent {
   apiUrl = '/articles'
+  disable = true;
+
+  counter(){
+    console.log('hi')
+  }
 }

@@ -1,8 +1,5 @@
 <mc-loading *ngIf="isLoading$ | async"></mc-loading>
-
 <mc-error-message *ngIf="error$ | async"></mc-error-message>
-
-<!-- <div *ngIf="isLoading$ | async"> <h1>SMTH iS LoaAding</h1></div> -->
 
 <div *ngIf="feed$ | async">
   <div
@@ -19,19 +16,18 @@
         </a>
         <span class="date">{{ article.createdAt }}</span>
       </div>
-      <div class="pull-xs-right">
-        ADD TO FAVORITES
-      </div>
+      <div class="pull-xs-right">ADD TO FAVORITES</div>
     </div>
     <a [routerLink]="['/aricles', article.slug]" class="preview-link">
       <h1>{{ article.title }}</h1>
       <p>{{ article.description }}</p>
-      <span>Read more..</span>
-      HERE LIST OF TAGS
+      <mc-tag-list [tags]="article.tagList"></mc-tag-list>
     </a>
   </div>
-  <mc-pagination [total]="(feed$ | async)?.articlesCount"
-                  [limit]="limit"
-                  [url]="baseUrl"
-                  [currentPage]="currentPage"></mc-pagination>
+  <mc-pagination
+    [total]="(feed$ | async)?.articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></mc-pagination>
 </div>
