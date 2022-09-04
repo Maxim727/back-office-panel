@@ -1585,10 +1585,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@ngrx/store-devtools@^14.0.1":
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-14.0.1.tgz#5e3f4fae642b1f41f0bede77a5c9615452aa9eb2"
-  integrity sha512-rTH8q+S+YGqitAywPchi1HSfOKORA+NBsCLPqYdkhUsq5aRPuYPxn1N9kc+V3K0aOkRbZ/UcRExtn5vsiaFe9w==
+"@ngrx/store-devtools@^14.3.0":
+  version "14.3.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-14.3.0.tgz#aa39fd6334547970902c1e38b2d7cd3fe6bba876"
+  integrity sha512-LjQxluTB07DrLhcS01H/Jb7uMFNJ0djJoAyyqtNC87VuF7ZMX5wEgzyBXtJvg3P5pz2P13NlxMohE+H4UJHw/Q==
   dependencies:
     tslib "^2.0.0"
 

@@ -1,18 +1,19 @@
 <div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-
-<div class="auth-page">
+<div class="auth-page" style="transform: translateY(60%)">
   <div class="container page">
     <div class="row">
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Create new account</h1>
         <p class="text-xs-center">
-          <a style="color: black;" [routerLink]="['/login']">Already have an account?</a>
+          <a style="color: black" [routerLink]="['/login']"
+            >Already have an account?</a
+          >
         </p>
 
-        <app-backend-error-messages *ngIf="backendErrors$ | async"
-                                   [backendErrors]="backendErrors$ | async">
+        <app-backend-error-messages
+          *ngIf="backendErrors$ | async"
+          [backendErrors]="backendErrors$ | async"
+        >
         </app-backend-error-messages>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <fieldset class="form-group">
@@ -40,7 +41,19 @@
                 formControlName="password"
               />
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right"  [disabled]="isSubmitting$ | async" type="submit">
+            <button
+              class="btn btn-lg"
+              type="button"
+              (click)="randomator()"
+              [disabled]="isSubmitting$ | async"
+            >
+              Random username
+            </button>
+            <button
+              class="btn btn-lg btn-primary pull-xs-right"
+              [disabled]="isSubmitting$ | async"
+              type="submit"
+            >
               Sign up
             </button>
           </fieldset>

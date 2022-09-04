@@ -35,12 +35,9 @@ import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store'
       autoPause: true,
     }),
     StoreRouterConnectingModule.forRoot(),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
     TopBarModule,
     GlobalFeedModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [
     PersistanceService,
